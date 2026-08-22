@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import json
 
 def main():
     print(r"""
@@ -22,21 +23,25 @@ def main():
             if document_to_analyze == 'q':
                 sys.exit()
 
-    sentence_count = 0
-    word_count = 0
-    unique_words = {}
-    special_characters = [
-        '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', 
-        '(', ')', '_', '+', '-', '=', '{', '}', '[', ']', 
-        '|', ':', ';', '"', "'", '<', '>', ',', '.', 
-        '?', '/'
-    ]
+    with open('100 Days of Python/Day 5/config.json', 'r') as cf:
+        settings = json.load(cf)
 
+        sentence_count = settings.get("sentence_count")
+        word_count = settings.get("word_count")
+        special_characters = settings.get("special_characters")
+        top_x_list = settings.get("top_x_list")
+        read_mode = settings.get("case_sensitivity")
+
+    unique_words = {}
 
     with open(document_to_analyze, encoding='UTF-8', 
               errors='ignore') as f:
-        file = f.read().lower()
-        file = file.split()
+        if read_mode == True:
+            file = f.read()
+            file = file.split()
+        if read_mode == False:
+            file = f.read().lower()
+            file = file.split()
 
     for word in file:
         if word[-1] == '.' or word[-1] == '!' or word[-1] == '?':
@@ -68,7 +73,7 @@ def main():
     print("\n-------------------------------------------------")
     print("\nThe top 10 most used words are:\n")
     top_10 = sorted(unique_words.items(), key=lambda item: item[1], 
-                    reverse=True)[:10]
+                    reverse=True)[:top_x_list]
     for k, v in top_10:
         print("\n{}: {}".format(k, v))
 
