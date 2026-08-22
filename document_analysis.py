@@ -78,10 +78,10 @@ def main():
         round(word_count / sentence_count, 2)
     ))
     print("\n-------------------------------------------------")
-    print("\nThe most used words are:\n")
-    top_10 = sorted(unique_words.items(), key=lambda item: item[1], 
-                    reverse=True)[:top_x_list]
-    for k, v in top_10:
+    top_x = sorted(unique_words.items(), key=lambda item: item[1], 
+        reverse=True)[:top_x_list]
+    print("\nThe top {} most used words are:\n".format(len(top_x)))
+    for k, v in top_x:
         print("\n{}: {}".format(k, v))
 
 def calc_avg_word_len(unique_words, word_count):
