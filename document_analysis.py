@@ -26,12 +26,19 @@ def main():
     with open('100 Days of Python/Day 5/config.json', 'r') as cf:
         settings = json.load(cf)
 
-        sentence_count = settings.get("sentence_count")
-        word_count = settings.get("word_count")
         special_characters = settings.get("special_characters")
         top_x_list = settings.get("top_x_list")
         read_mode = settings.get("case_sensitivity")
 
+    if top_x_list < 0 or top_x_list > 100:
+        print("\nInvalid top_x_list value. Please update settings and run the program again.")
+        sys.exit()
+    if read_mode != bool:
+        print("\nInvalid case_sensitivity settings, must be boolean")
+        sys.exit()
+
+    sentence_count = 0
+    word_count = 0
     unique_words = {}
 
     with open(document_to_analyze, encoding='UTF-8', 
@@ -71,7 +78,7 @@ def main():
         round(word_count / sentence_count, 2)
     ))
     print("\n-------------------------------------------------")
-    print("\nThe top 10 most used words are:\n")
+    print("\nThe most used words are:\n")
     top_10 = sorted(unique_words.items(), key=lambda item: item[1], 
                     reverse=True)[:top_x_list]
     for k, v in top_10:

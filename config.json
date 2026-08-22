@@ -1,12 +1,10 @@
 {
-    "sentence_count": 0,
-    "word_count": 0,
     "special_characters": [
         "~", "`", "!", "@", "#", "$","%", "^", "&", "*", 
         "(", ")", "_", "+", "-", "=", "{", "}", "[", "]", 
         "|", ":", ";", "\"", "'", "<", ">", ",", ".", 
         "?", "/", "\\"
         ],
-        "top_x_list": 10,
-        "case_sensitivity": false
+    "top_x_list": 10,
+    "case_sensitivity": false
 }
