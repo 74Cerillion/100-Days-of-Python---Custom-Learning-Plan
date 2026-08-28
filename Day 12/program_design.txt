@@ -8,10 +8,10 @@ Reqs:
             support adding and removing products, finding a product by SKU, displaying all products, calculating value of whole inventory
         
         Give user a menu that allows them to:
-            Add product
-            Add stock
-            Remove stock
-            change price
+            Add product -
+            Add stock -
+            Remove stock -
+            change price 
             find product
             display inventory
             display inventory value
