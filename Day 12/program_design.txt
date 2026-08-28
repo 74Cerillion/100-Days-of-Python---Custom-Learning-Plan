@@ -1,0 +1,24 @@
+Reqs:
+    Create a small inventory management system using classes
+
+        Must use a product class with product name, SKU, price, and quantity in stock
+            Must have behaviors: add, remove, change price, calculate total value in inventory
+        
+        [optional] use an inventory class that manages the product objects
+            support adding and removing products, finding a product by SKU, displaying all products, calculating value of whole inventory
+        
+        Give user a menu that allows them to:
+            Add product
+            Add stock
+            Remove stock
+            change price
+            find product
+            display inventory
+            display inventory value
+            rm product
+            exit
+
+add product
+
+class.py - will own the class, its state, and its behaviors
+main.py - will own the user-facing interaction and program logic
