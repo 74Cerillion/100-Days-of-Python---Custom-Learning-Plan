@@ -24,3 +24,9 @@ class Product:
             print("Total Stock for {} is now {}.".format(
                 self.name, self.quantity
             ))
+
+    def change_price(self, newPrice):
+          self.price = newPrice
+          print("The new price for {} is {}.".format(
+                self.name, self.price
+          ))
