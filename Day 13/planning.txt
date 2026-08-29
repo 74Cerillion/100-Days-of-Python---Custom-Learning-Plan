@@ -56,10 +56,6 @@ Necessary Data:
         //if self.balance - amt < 0
             //raise ValueError
         
-        //if target account doesn't exist
-            //print user does not exist
-            //exit 
-        
         //try
             //self.balance -= amt
             //target.balance += amt
@@ -112,6 +108,12 @@ CREATE USER INTERFACE // CLI WILL DO
 // if choice == 3
     //prompt for amt
     //prompt for account to transfer to
+
+    //if target does not exit
+        //#VALIDATE TARGET Account
+    //else
+        //write way to transform target into its object for passing
+        
     //call transfer, pass target and amt in that order
 
 //thank user for using
