@@ -5,7 +5,7 @@ Necessary Data:
     Total Currency in bank - class
         Cannot go negative
 
-    Transactions for each account - Set - instance
+    Transactions for each account - List - instance
 
 
 //init class
@@ -113,7 +113,7 @@ CREATE USER INTERFACE // CLI WILL DO
         //#VALIDATE TARGET Account
     //else
         //write way to transform target into its object for passing
-        
+
     //call transfer, pass target and amt in that order
 
 //thank user for using
