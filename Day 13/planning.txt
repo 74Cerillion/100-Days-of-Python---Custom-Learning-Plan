@@ -1,0 +1,76 @@
+Necessary Data:
+    Account Name - str - instance
+    Account Balance - Int - instance
+        Cannot be negative
+    Total Currency in bank - class
+        Cannot go negative
+
+    Transactions for each account - Dictionary - instance
+
+
+//init class
+    //totalCurrency = 0
+
+    //define init with self, Name, Balance
+        //self name = name
+        
+        #validate balance
+        //if balance < 0
+            //raise ValueError
+
+        //self transactions = {}
+
+        //totalCurrency += balance
+
+    //def deposit_amt(self, amount):
+        //while True:
+            //if amount <= 0:
+                //print("Must depo pos amt")
+                //input
+                //continue
+            //break
+
+        //self.balance += amount
+
+        //is transactions deposit
+            //self.transactions[Deposit] append amount
+        //else
+            //self.transactions deposit = amt
+
+    //def withdraw_amt(self, amt):
+        //while True:
+            //if amt <= 0:
+                //print("Must withdraw pos amt")
+                //input
+                //continue
+            //break
+        
+        //if self.balance - amt < 0:
+            //raise ValueError
+                //insufficient balance
+        //else
+            //self.balance -= amt
+        
+        //if transactions[withdraw]:
+            //transactions[withdraw] append amt
+        //else
+            //transactions withdraw = amt
+        
+    //def transfer(self, target account, amt)
+        //if self.balance - amt < 0
+            //raise ValueError
+        
+        //if target account doesn't exist
+            //print user does not exist
+            //exit 
+        
+        //try
+            //self.balance -= amt
+            //target.balance += amt
+        //except #intentional catchall (no specific error named)
+            //bounce transaction, let user know it Failed
+        
+        //if self transactions
+            //self transactions transfer append amt
+        //else
+            //self transactions transfer = amt
