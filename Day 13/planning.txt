@@ -66,5 +66,53 @@ Necessary Data:
         //except #intentional catchall (no specific error named)
             //bounce transaction, let user know it Failed
         
-        ////transactions append statement of change
+        //transactions append statement of change
             #include amt, transfer, and time
+
+CREATE USER INTERFACE // CLI WILL DO
+***anything more is outside the scope of today's learning endeavors
+
+//import sys and class
+
+//initialize dictionary to store account instances
+    //put 4 in there for persistence (TEST CASES)
+*Ability to add more later is easy, and outside of today's scope
+#See the assignment description for scope and purpose#
+
+//display welcome message
+
+//ask user for username
+
+//while True
+    #validate username
+    //if username in dict keys
+        //break
+    //else
+        //user does not exist
+        //sys exit
+
+//display menu with options correlated to numbers
+
+//while True
+    //accept input for user decision
+        #validate input
+        //if input in menu options
+            //break
+        //else
+            //print invalid message
+
+//if choice == 1
+    //prompt for amount
+    //call deposit method, pass amt
+
+// if choice == 2
+    //prompt for amt
+    //call withdrawal method, pass amt
+
+// if choice == 3
+    //prompt for amt
+    //prompt for account to transfer to
+    //call transfer, pass target and amt in that order
+
+//thank user for using
+//end program
