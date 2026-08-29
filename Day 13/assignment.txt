@@ -1,0 +1,38 @@
+Day 13- primary concept:
+    invariants + Validation in OOP
+Secondary Concept:
+    Methods that safetly modify object state
+
+BankAccount:
+    3 invariants:
+        Balance can never be negative
+        Deposit/Withdrawal/Transfer must be greater than 0
+        Money cannot simply disappear, what leaves Account A must go somewhere
+
+The Assignment:
+    create class BankAccount with 3 pieces of state:
+        Owner
+        Balance
+        Transactions
+    To not build acc#'s, PINs, IAM, interest, overdraft protection, databases, timestamps, menus, or file storage
+    Class must support the following actions:
+        deposit(amt)
+            Accept valid positive monetary amount
+            add to Balance
+            record Transactions
+            reject 0 and negative amounts
+        withdraw(amt)
+            Accepts a valid positive amount
+            subtract it from Balance
+            record Transactions
+            prevent overdraft
+            if withdraw fails, account must remian unchanged
+        transfer(target_account, amt)
+            Move money from bank account to another
+            must obey same positive amount and sufficient funds rules
+            both accounts' balances must be updated
+            both accounts should have a transaction-history entry reflecting what happened
+            Failed transfer must leave both accounts unchanged
+            
+
+    
