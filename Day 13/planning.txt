@@ -5,7 +5,7 @@ Necessary Data:
     Total Currency in bank - class
         Cannot go negative
 
-    Transactions for each account - Dictionary - instance
+    Transactions for each account - Set - instance
 
 
 //init class
@@ -18,7 +18,7 @@ Necessary Data:
         //if balance < 0
             //raise ValueError
 
-        //self transactions = {}
+        //self transactions = ()
 
         //totalCurrency += balance
 
@@ -32,10 +32,8 @@ Necessary Data:
 
         //self.balance += amount
 
-        //is transactions deposit
-            //self.transactions[Deposit] append amount
-        //else
-            //self.transactions deposit = amt
+        //transactions append statement of change
+            #include amt, depo, and time
 
     //def withdraw_amt(self, amt):
         //while True:
@@ -51,10 +49,8 @@ Necessary Data:
         //else
             //self.balance -= amt
         
-        //if transactions[withdraw]:
-            //transactions[withdraw] append amt
-        //else
-            //transactions withdraw = amt
+        //transactions append statement of change
+            #include amt, withdraw, and time
         
     //def transfer(self, target account, amt)
         //if self.balance - amt < 0
@@ -70,7 +66,5 @@ Necessary Data:
         //except #intentional catchall (no specific error named)
             //bounce transaction, let user know it Failed
         
-        //if self transactions
-            //self transactions transfer append amt
-        //else
-            //self transactions transfer = amt
+        ////transactions append statement of change
+            #include amt, transfer, and time
