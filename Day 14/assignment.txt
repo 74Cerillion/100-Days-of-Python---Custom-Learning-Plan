@@ -1,0 +1,54 @@
+Focus of today:
+    Encapsulation and Learning to use the @property decorator
+
+secondary concept is protecting object invariants
+
+Make the attribute itself refuse to accept an invalid state
+
+The Assignment:
+Build a small class representing the configuration of a server.
+    Include these attributes:
+        hostname
+        port
+        max_connections
+
+    protect all 3 values by properties
+
+    hostname must be a non-empty string
+    port must be an integer from 1-65535
+    max_connections must be an integer greater than 0
+
+    Invalid assignments should raise a ValueError
+
+    Do not use getter/setter/deleter access - attributes should
+    be accessed like normal attributes
+
+    use private-ish backing attributes
+
+    expose attributes through properties, not directly
+
+    __init__() should not bypass validation, so instantiation
+    should fail if the attribute values are invalid
+
+Criteria:
+    Build a small main.py that demonstrates your class
+    CLI output should look roughly like:
+
+SERVER CONFIGURATION
+
+Hostname: web-01
+Port: 443
+Maximum Connections: 100
+
+Updating configuration...
+
+Hostname: production-web-01
+Port: 8443
+Maximum Connections: 250
+
+    deliberately attempt two invalid assignments
+    gracefully handle failures to that program does not crash
+
+    No fancy menus, persistence, JSON, CLI arguments, multiple
+    servers, timestamps, or transaction histories as they take
+    you out of scope
