@@ -1,0 +1,56 @@
+//define the class
+
+//define class
+    //def init with self, hostname, port, max_connections
+        //if not isinstance(hostname, str):
+            //raise ValueError(error message)
+        //self hostname _hostname = string
+        //if not isinstance(port, integer)
+            //raise ValueError(error message)
+        //self port abs(_port) = smallint
+        //if not isinstance(mc, integer)
+            //raise ValueError(error message)
+        //self mc abs(_mc) = integer
+
+    //@properties
+    //def update hostname (self, new hostname)
+        //if new hostname is alphanumeric
+            //if new len new hostname is longer than 0
+                //self hostname = new hostname   
+            //else return value ValueError
+        //else return value ValueError 
+
+    //@properties
+    //def update port (self, new port)
+        //if is digit
+            //if new port is larger than 0
+                //self port = new port
+            //else return value ValueError
+        //else return value ValueError
+
+    //@properties
+    //def update mc (self, new mc)
+        //if mc is digit
+            //if mc is larger than 0
+                //self mc = new mc
+            //else return value ValueError
+        //else return value ValueError
+
+
+MAIN LOGIC::::
+
+//sample switch = Classname(hostname, port, mc)
+
+//print(SERVER CONFIGURATION)
+
+//print(Hostname)
+//print(port)
+//print(mc)
+
+//sample switch.update hostname(new hostname)
+//sample switch.update port(new port)
+//sample switch.update mc(new mc)
+
+//print hostname
+//print port
+//print mc
