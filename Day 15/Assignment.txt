@@ -1,0 +1,19 @@
+day 15 -- Dataclass refactor
+    Rewrite a model using @Dataclass
+    Focus:
+        modern python modules
+
+Take the model you built for day 14 and create a second working version using @Dataclass
+Required functionality:
+    1. Define the object with @Dataclass
+    2. Use type hints on every field
+    3. Have at least one default-valued field
+    4. Have one Mutable field
+    5. Preserve validation for at least 1 attribute
+    6. Create at least 3 instances
+        Demonstrate normal construction, construction using a default, and rejection of invalid data
+    7. Compare two objects using ==
+
+Day 15 is complete when you can take both the traditional class and dataclass versions of yesterday's code and explain:
+    What code did @dataclass save me from writing, what does __post_init__() do, and why would I use default_factory instead
+    of just writing tags = []?
