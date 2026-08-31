@@ -1,0 +1,16 @@
+init can be passed to dataclass
+
+replace the @property with __post_init__
+
+Explanations:
+    Dataclass will save me from writing the boilerplate code like __init__, while (specifically for day 14) giving me additional
+    functionality. I can turn off the automatic additions of init, eq, or repr by setting them to False when I call @dataclass
+
+    __post_init__ provides two important pieces of functionality to @dataclass and does so in a pretty simple way. Honestly, a lot simpler
+    than property. It does provide the same functionality as property but it provides it exclusively to dataclasses. It provides
+    input validation, data sanitization, and derived attribute fields
+
+    Lastly, I would use default as an argument instead of using tags because when using a dataclass, default_factory solves the mutable
+    default argument bug in Python. This bug causes alterations to a mutable data type like a list or a dictionary in one instance to 
+    effect all other instances as well. When you want the list or dictionary specific to one instance instead of a class-constant,
+    declare the type with default_factory.
