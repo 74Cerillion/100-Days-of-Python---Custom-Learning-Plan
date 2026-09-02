@@ -5,6 +5,7 @@ class Switch:
     hostname: str = field(default="localhost")
     port: int = field(default=8080)
     maxConnections: int = field(default=10)
+    vlans: list[str] = field(default_factory=list)
 
     def __post_init__(self):
         if not self.hostname:
@@ -19,12 +20,14 @@ class Switch:
             raise ValueError("Invalid Input, Expected truthy str.")
         self.hostname = new_hostname
 
-normalConstruction = Switch('s1', 443, 3)
+normalConstruction = Switch('s1', 443, 3, ['vlan1', 'vlan2'])
 defaultConstruction = Switch()
 
 try:
-    rejectedConstruction = Switch('', 70000, -1)
+    rejectedConstruction = Switch('', 70000, -1, [])
 except ValueError as e:
     print(f"Rejected construction: {e}")
 
 print(normalConstruction == defaultConstruction)
+print(normalConstruction)
+print(defaultConstruction)
