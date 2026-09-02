@@ -1,0 +1,45 @@
+Day 16 - 
+    Enums in a workflow
+    primary focus: Enums, state modeling
+
+Build a small program that models the lifecycle of an IT support ticket. This is not a production grade full ticketing system.
+The central problems to solve today:
+    How do I represent a value that should only ever be one of a small, predefined set of valid choices?
+    Develop a conceptual understanding of enum members, .name, .value, comparison, using enum as an object's state
+
+Success Criteria:
+    (1) Working main.py program that checks the boxes below
+    (2) The ability to answer the following four questions:
+        - What problem does an enum solve that strings don't?
+        - What's the difference between .name and .value?
+        - Why should Ticket.status contain a TicketStatus member instead of its string .value?
+        - How does using an Enum make invalid program states harder to create?
+
+Program Requirements;
+
+1. Create a TicketStatus enum that supports these 4 states:
+    Pending
+    In_progress
+    Resolved
+    closed
+You decide what values these should contain.
+
+2. Create a Ticket dataclass, each ticket needs:
+    ticket_id
+    title
+    status
+    * New tickets should default to pending *
+
+3. Implement state transitions: Give a Ticket a method responsible for moving the ticket forward through its lifecycle
+    Do not allow advance() to move a closed ticket anywhere
+
+4. Add one explicit transition method
+    Method should closed a ticket
+    Ticket may only be closed if it's Resolved
+        invalid transitions should raise an appropriate exception message
+
+5. Perform an actual comparison against an enum number
+
+6. Demonstrate the workflow by creating at least two tickets:
+    Ticket 1 should go through the stages as designed
+    Ticket 2 should include an invalid transition to display the programs error handling
