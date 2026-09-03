@@ -1,0 +1,41 @@
+Full document:
+imports:
+    dataclass/es
+    strEnum
+
+//instantiate two objects
+    //one needs a valid transition
+    //one needs valid info and to attempt an invalid transition
+
+//compare object 1 against object 2 with 'is' or '=='
+    //print result
+
+Requirement 1:
+
+//class TicketStatus(strEnum):
+    //pending = pending
+    //in progress = in progress
+    //resolved = resolved
+    //closed = closed
+
+//@dataclass
+//class Ticket:
+    //ticket_id: int
+    //title: str
+    //status: TicketStatus = TicketStatus.Pending
+
+    //def post init (self):
+        //if not isinstance(self.status, TicketStatus):
+            //raise ValueError Invalid value for status
+
+    //def advance ticket (self):
+        //if not isinstance(self.status, TicketStatus):
+            //raise ValueError Invalid value for status
+        //if ticket status = pending
+            //ticket status = in progress
+        //elif ticket status = in progress
+            //ticket status = resolved
+        //elif ticket status = Resolved
+            //ticket status = closed
+        //else
+            //print cannot advance closed ticket
