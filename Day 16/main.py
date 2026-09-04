@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from enum import strEnum
+from enum import StrEnum
 
-class TicketStatus(strEnum):
+class TicketStatus(StrEnum):
     pending = 'Pending'
     in_progress = 'In Progress'
     resolved = 'Resolved'
@@ -28,3 +28,35 @@ class Ticket:
             self.status = TicketStatus.closed
         else:
             raise ValueError("Cannot advance a closed ticket.")
+
+def main():
+    ticket1 = Ticket(id=1, title="Fix login bug")
+    print(ticket1)
+
+    ticket1.advance()
+    print(ticket1)
+
+    ticket1.advance()
+    print(ticket1)
+
+    ticket1.advance()
+    print(ticket1)
+
+    print(ticket1.status.name)  # Output: closed
+    print(ticket1.status.value)  # Output: Closed
+
+    try:
+        ticket1.advance()
+    except ValueError as e:
+        print(e)
+
+    ticket2 = Ticket(id=2, title="Add new feature", status=TicketStatus.in_progress)
+    print(ticket2)
+
+    ticket3 = Ticket(id=3, title="Update documentation", status='active')
+      # This will raise a ValueError)
+
+    print(ticket3)
+
+if __name__ == "__main__":
+    main()
