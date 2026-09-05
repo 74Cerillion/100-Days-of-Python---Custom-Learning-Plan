@@ -1,0 +1,30 @@
+Day 17:
+    Primary Focus: Composition over Inheritance
+    Secondary Focus: Type relationships, validation, object interaction
+Target Time: 60-90 minutes
+
+Assignment:
+    Build a small program that models a computer assembled from independently created hardware component objects
+Need four classes:
+    CPU with make, model, cores, and clock speed GHz
+        make/model cannot be empty, cores must be > 0, clock speed must be > 0
+    RAM with make, capacity, speed in MHz
+        make cannot be empty, capacity must be > 0, speed must be > 0
+    Storage with make, capacity in GB, storage Type
+        type should only accept "HDD", "SSD", "NVMe"
+    Computer, which must contain name, one CPU object, one or more RAM objects, and one or more Storage objects
+
+Requirements:
+    Computer constructor should reject inappropriate object types
+    Computer should have a method that calculates the combined capacity of all RAM objects in the computer
+        Must be stored as the main component
+    Likewise with total storage
+    Produce a system summary
+    Must allow either RAM or Storage to be added after initial construction
+
+Restraint:
+    DO NOT USE Inheritance
+        Use HAS-A relationships, not IS-A relationshpis
+
+Central Question to answer:
+    Did computer become useful by owning and coordinating other objects rather than inheriting their behavior?
