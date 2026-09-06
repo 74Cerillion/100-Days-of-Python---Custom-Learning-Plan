@@ -1,0 +1,42 @@
+Create computer class - the master of the Composition
+    Each computer needs CPU, RAM, and Storage
+
+    Must reject inappropiate object types
+    need method to calculate combined capacity of all RAM objects
+    Need method to calculate combined capacity of all Storage objects
+    Need method that gives a system summary
+    Needs a method that allows the addition of ram and storage after creation
+
+Need a CPU class with:
+    make
+    model
+    cores
+    clock speed GHz
+
+        Make/model must be populated
+        cores must be positive and non-zero
+        clock speed must be positive and non-zero
+
+    class must validate input
+
+need a RAM class with:
+    make
+    capacity
+    speed in MHz
+
+        make must be populated
+        capacity must be positive and non-zero
+        speed must be positive and non-zero
+
+    class must validate input
+
+need a storage class with:
+    make
+    capacity in GB
+    Storage Type
+
+        make must be populated
+        capacity must be positive and non-zero
+        storage type must be either HDD, SSD, or NVMe
+
+    class must validate input
