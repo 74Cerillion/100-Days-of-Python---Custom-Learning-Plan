@@ -12,75 +12,74 @@ class Computer:
     """Object Controller Object"""
 
     def __init__(self, oCPU, oRAM, oStorage):
-        self.oCPU = oCPU
-        self.oRAM = oRAM
-        self.oStorage = oStorage
-        self.olRAM = []
-        self.olStorage = []
+        self._oCPU = oCPU
+        self._oRAM = []
+        self._oStorage = []
+
+        self.addRAM(oRAM)
+        self.addStorage(oStorage)
 
     @property
     def oCPU(self):
-        return self.oCPU
+        return self._oCPU
 
     @oCPU.setter
-    def oCPU(self, oCPU):
-        if isinstance(oCPU, CPU):
-            self.oCPU = oCPU
+    def oCPU(self, maybeCPU):
+        if isinstance(maybeCPU, CPU):
+            self._oCPU = maybeCPU
         else:
             raise TypeError("oCPU must be an instance of CPU class")
 
     @property
     def oRAM(self):
-        return self.oRAM
+        return self._oRAM
 
     @oRAM.setter
     def oRAM(self, oRAM):
         if isinstance(oRAM, RAM):
-            self.oRAM = oRAM
-            self.olRAM.append(oRAM)
+            self._oRAM.append(oRAM)
         else:
             raise TypeError("oRAM must be an instance of RAM class")
 
     @property
     def oStorage(self):
-        return self.oStorage
+        return self._oStorage
 
     @oStorage.setter
-    def oStorage(self, oStorage):
-        if isinstance(oStorage, Storage):
-            self.oStorage = oStorage
-            self.olStorage.append(oStorage)
+    def oStorage(self, maybeStorage):
+        if isinstance(maybeStorage, Storage):
+            self._oStorage.append(maybeStorage)
         else:
             raise TypeError("oStorage must be an instance of Storage class")
 
     @property
     def totalRAM(self):
         amtRAM = 0
-        for oRAM in self.olRAM:
-            amtRAM += oRAM.capacity
+        for o in self._oRAM:
+            amtRAM += o.capacity
         return amtRAM
 
     @property
     def totalStorage(self):
         amtStorage = 0
-        for oStorage in self.olStorage:
-            amtStorage += oStorage.capacity
+        for o in self._oStorage:
+            amtStorage += o.capacity
         return amtStorage
 
     def show(self):
-        print(f"CPU: {self.oCPU}")
+        print(f"CPU: {self._oCPU}")
         print(f"Total RAM: {self.totalRAM} GB")
         print(f"Total Storage: {self.totalStorage} GB")
 
     def addRAM(self, oRAM):
         if isinstance(oRAM, RAM):
-            self.olRAM.append(oRAM)
+            self._oRAM.append(oRAM)
         else:
             raise TypeError("oRAM must be an instance of RAM class")
 
     def addStorage(self, oStorage):
         if isinstance(oStorage, Storage):
-            self.olStorage.append(oStorage)
+            self._oStorage.append(oStorage)
         else:
             raise TypeError("oStorage must be an instance of Storage class")
 
