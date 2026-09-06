@@ -1,3 +1,25 @@
+main interface:
+//gather Ram:
+//input what's the make
+//input what's the capacity
+//input what's the speed
+//self.RAM = RAM(make, capacity, speed)
+
+//gather CPU:
+//input what's the make
+//input what's the model
+//input how many cores
+//input what's the clockSpeed
+//self.CPU = CPU(make, model, cores, clockSpeed)
+
+//gather Storage:
+//input what's the make
+//input what's the capacity
+//input what's the storage type
+//self.Storage = Storage(make, capacity, storageType)
+
+//Instantiate Computer Object (CPU, RAM, Storage #Objects)
+
 Create computer class - the master of the Composition
     Each computer needs CPU, RAM, and Storage
 
@@ -9,67 +31,47 @@ Create computer class - the master of the Composition
 
 //class Computer():
 
-    //def init(self, CPU, RAM, Storage)
-        //CPU = CPU(make, model, cores, clockSpeed)
-        //oRAM = list of RAM objects RAM(make, capacity, speed)
-        //oStorage = list of Stroage objects Storage(make, capacity, storageType)
-        //self total RAM = 0
-        //self total Storage = 0
+    //def init(self, oCPU, oRAM, oStorage)
+        //self.oCPU = oCPU
+        //self.oRAM = list of RAM objects
+        //self.oStorage = list of Stroage objects
 
     //@property
-    //def CPU(self):
-        return CPU object
-    
-    //@CPU.Setter
-    //def CPU(self):
-        //input what's the make
-        //input what's the model
-        //input how many cores
-        //input what's the clockSpeed
-        //self.CPU = CPU(make, model, cores, clockSpeed)
+    //def oCPU(self):
+        //if isinstance(oCPU, CPU):
+            //return self.oCPU = oCPU
 
     //@property
     //def oRAM(self):
-        //return RAM object
+        //if isinstance(oRAM, RAM):
+            //self.oRAM.append(oRAM)
 
     //@oRAM.Setter
-        //input what's the make
-        //input what's the capacity
-        //input what's the speed
-        //self.RAM = RAM(make, capacity, speed)
-        //self.oRAM.Append(object)
+    //define oRAM(self):
+        //if instance(oRAM, RAM):
+            //self.oRAM.append(oRAM)
 
     //@property
     //def oStorage(self):
-        //return Storage object
+        //if isinstance(oStorage, Storage):
+            //self.oStorage.append(oStorage)
     
     //@Storage.Setter
     //def oStorage(self):
-        //input what's the make
-        //input what's the capacity
-        //input what's the storage type
-        //self.Storage = Storage(make, capacity, storageType)
-        //self.Storage.Append(object)
+        //if isinstance(oStorage, Storage):
+            //self.oStorage.append(oStorage)
 
-    //@property
-    //def total Ram (self):
-        //return total Ram number
-    
-    //@total Ram . Setter
-    //def total Ram (self)
-        //for e in oRam:
-            //total ram += e.capacity
-        //return self.totalRam = total Ram
+    @property
+    //def totalRAM(self):
+        //for i in self.oRAM:
+            //amtRAM += i.capacity
+        return amtRAM
 
-    //@property
-    //def total Storage (self):
-        //return total Storage number
-    
-    //@total Storage . Setter
-    //def total Storage (self)
-        //for e in oStorage:
-            //total Storage += e.capacity
-        //return self.totalStorage = total Storage
+    @property
+    //def totalStorage(self):
+        //for i in self.oStorage:
+            //amtStorage += i.capacity
+        return amtStorage
 
     //def show(self):
         //print This computer has:
@@ -78,10 +80,10 @@ Create computer class - the master of the Composition
             //print self.totalStorage
 
     //def add Ram(self):
-        //call oRAM Setter
+        //call self.oRAM
 
     //def add Storage(self):
-        //call oStorage Setter
+        //call self.oStorage
 
 Custom Error class (myError)
     can pass for now, but something to call
@@ -105,21 +107,13 @@ Need a CPU class with:
     cores: int
     clockSpeed: float
 
-    //def __post_init__(self, make, model, cores, clockSpeed)
-        //if make is False:
+    //def __post_init__(self)
+        //if make empty:
             //raise myError (make must be populated)
         //if model is False:
             //raise myError (Model must be populated)
-        //try:
-            //cores equals int cores
-        //except:
-            //raise myError (cores must be an integer)
         //if cores <= 0:
             //raise myError (cores cannot be negative or 0)
-        //try:
-            //clockSpeed = float clockSpeed
-        //except:
-            //raise myError (clockSpeed is a float in GHz)
         //if clockSpeed <= 0:
             //raise myError (clockSpeed must be positive)
 
@@ -140,19 +134,11 @@ need a RAM class with:
     //capacity: float
     //speed: float
 
-    //def __post_init__(self, make, capacity, speed)
-        //if make False:
+    //def __post_init__(self)
+        //if make empty:
             //raise myError (make cannot be None)
-        //try:
-            capacity = float(capacity)
-        //except:
-            //raise myError (capacity must be a number)
         //if capacity <= 0:
             //raise myError (Cannot have Negative or 0 ram)
-        //try:
-            //speed = float(speed)
-        //except:
-            //raise myError (speed must be a float)
         //if speed <= 0:
             //raise myError (speed cannot be negative or 0)
         
@@ -178,12 +164,8 @@ need a storage class with:
     //capacity: float
     //storageType: StorageTypes
 
-    //def post init (self, make, capacity, storageType)
-        //if make False:
+    //def post init (self)
+        //if make empty:
             //raise myError (must have make)
-        //try:
-            //capacity = float(capacity)
-        //except:
-            //raise myError (capacity must be numerical)
         //if capacity <= 0:
             //raise myError (capacity cannot be zero or negative)
