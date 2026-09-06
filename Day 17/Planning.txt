@@ -1,11 +1,90 @@
 Create computer class - the master of the Composition
     Each computer needs CPU, RAM, and Storage
 
-    Must reject inappropiate object types
+    Must reject inappropiate object types.
     need method to calculate combined capacity of all RAM objects
     Need method to calculate combined capacity of all Storage objects
     Need method that gives a system summary
     Needs a method that allows the addition of ram and storage after creation
+
+//class Computer():
+
+    //def init(self, CPU, RAM, Storage)
+        //CPU = CPU(make, model, cores, clockSpeed)
+        //oRAM = list of RAM objects RAM(make, capacity, speed)
+        //oStorage = list of Stroage objects Storage(make, capacity, storageType)
+        //self total RAM = 0
+        //self total Storage = 0
+
+    //@property
+    //def CPU(self):
+        return CPU object
+    
+    //@CPU.Setter
+    //def CPU(self):
+        //input what's the make
+        //input what's the model
+        //input how many cores
+        //input what's the clockSpeed
+        //self.CPU = CPU(make, model, cores, clockSpeed)
+
+    //@property
+    //def oRAM(self):
+        //return RAM object
+
+    //@oRAM.Setter
+        //input what's the make
+        //input what's the capacity
+        //input what's the speed
+        //self.RAM = RAM(make, capacity, speed)
+        //self.oRAM.Append(object)
+
+    //@property
+    //def oStorage(self):
+        //return Storage object
+    
+    //@Storage.Setter
+    //def oStorage(self):
+        //input what's the make
+        //input what's the capacity
+        //input what's the storage type
+        //self.Storage = Storage(make, capacity, storageType)
+        //self.Storage.Append(object)
+
+    //@property
+    //def total Ram (self):
+        //return total Ram number
+    
+    //@total Ram . Setter
+    //def total Ram (self)
+        //for e in oRam:
+            //total ram += e.capacity
+        //return self.totalRam = total Ram
+
+    //@property
+    //def total Storage (self):
+        //return total Storage number
+    
+    //@total Storage . Setter
+    //def total Storage (self)
+        //for e in oStorage:
+            //total Storage += e.capacity
+        //return self.totalStorage = total Storage
+
+    //def show(self):
+        //print This computer has:
+            //print self.CPU
+            //print self.totalRam
+            //print self.totalStorage
+
+    //def add Ram(self):
+        //call oRAM Setter
+
+    //def add Storage(self):
+        //call oStorage Setter
+
+Custom Error class (myError)
+    can pass for now, but something to call
 
 Need a CPU class with:
     make
@@ -17,7 +96,32 @@ Need a CPU class with:
         cores must be positive and non-zero
         clock speed must be positive and non-zero
 
-    class must validate input
+    class must validate input on instantiation
+
+//dataclass
+//class CPU():
+    make: str
+    model: str
+    cores: int
+    clockSpeed: float
+
+    //def __post_init__(self, make, model, cores, clockSpeed)
+        //if make is False:
+            //raise myError (make must be populated)
+        //if model is False:
+            //raise myError (Model must be populated)
+        //try:
+            //cores equals int cores
+        //except:
+            //raise myError (cores must be an integer)
+        //if cores <= 0:
+            //raise myError (cores cannot be negative or 0)
+        //try:
+            //clockSpeed = float clockSpeed
+        //except:
+            //raise myError (clockSpeed is a float in GHz)
+        //if clockSpeed <= 0:
+            //raise myError (clockSpeed must be positive)
 
 need a RAM class with:
     make
@@ -30,13 +134,56 @@ need a RAM class with:
 
     class must validate input
 
+//dataclass
+//class RAM():
+    //make: str
+    //capacity: float
+    //speed: float
+
+    //def __post_init__(self, make, capacity, speed)
+        //if make False:
+            //raise myError (make cannot be None)
+        //try:
+            capacity = float(capacity)
+        //except:
+            //raise myError (capacity must be a number)
+        //if capacity <= 0:
+            //raise myError (Cannot have Negative or 0 ram)
+        //try:
+            //speed = float(speed)
+        //except:
+            //raise myError (speed must be a float)
+        //if speed <= 0:
+            //raise myError (speed cannot be negative or 0)
+        
 need a storage class with:
     make
     capacity in GB
-    Storage Type
+    Storage Type (This needs an Enum)
 
         make must be populated
         capacity must be positive and non-zero
         storage type must be either HDD, SSD, or NVMe
 
     class must validate input
+
+//class StorageTypes(StrEnum):
+    //HDD = "HDD"
+    //SSD = "SSD"
+    //NVMe = "NVMe"
+
+//@dataclass
+//class Storage():
+    //make: str
+    //capacity: float
+    //storageType: StorageTypes
+
+    //def post init (self, make, capacity, storageType)
+        //if make False:
+            //raise myError (must have make)
+        //try:
+            //capacity = float(capacity)
+        //except:
+            //raise myError (capacity must be numerical)
+        //if capacity <= 0:
+            //raise myError (capacity cannot be zero or negative)
