@@ -1,0 +1,56 @@
+//import dataclasses
+
+//dataclass
+//class employee:
+    //name str
+    //emp id int
+    //Salary float
+
+    //describe inherant to dataclass
+    //def giveBonus(self)
+        //return self.salary * 1.05
+
+//class developer(employee)
+    //def init (self, name, empID, Salary, programmingLanguage)
+        //super().__init__(name, empID, Salary)
+        //self.programmingLanguage = programmingLanguage
+
+        //def function describe(self):
+            //print all attributes of the developer
+
+        //def function giveBonus:
+            //return self.salary * 1.1
+
+//class manager(employee)
+    //def init(self, name, empID, salary, dept)
+        //super().__init__(name, empID, salary)
+        //self.dept = dept
+
+    //def function describe
+        //print all attributes of the manager
+
+    //def giveBonus(self)
+        //return self.salary * 1.15
+
+::::::::::::::INTERFACE::::::::::::::::::::::::::::::::::::::::::::::::::
+//import classes above
+
+//def main
+
+//emp1 = Employee(name, empID, Salary)
+//dev1 = Developer(name, empID, Salary, language)
+//man1 = Manager(name, empID, Salary, dept)
+
+//print(emp1)
+//print(dev1.describe())
+//print(man1.describe())
+
+//emp1.giveBonus()
+//dev1.giveBonus()
+//man1.giveBonus()
+
+//print(emp1.Salary)
+//print(dev1.Salary)
+//print(man1.Salary)
+
+//if name main main()

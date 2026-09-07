@@ -35,8 +35,8 @@ Restraints:
     1. At least one overridden method must use super().__init__()
     2. This is not a production ready database, the goal is to learn inheritance   
         OUT OF SCOPE: collections, searching, hiring/firing, other management 
-        functionalities, JSON/persistence, CLI Menus, dataclasses, properties, Enum,
-        abstract base classes, multiple inheritance, 
+        functionalities, JSON/persistence, CLI Menus, dataclasses(unless it makes NATURAL sense), 
+        properties, Enum, abstract base classes, multiple inheritance, 
 
 Central Question:
     When should I inherit behavior vs when should I use composition?
