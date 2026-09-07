@@ -1,0 +1,41 @@
+Day 19 - State Machine
+    Implement a vending machine or order workflow
+FOCUS:
+    Explicit State Transitions
+
+Build a small program that models an Order moving through a predefined lifecycle
+
+Primary Learning Objective:
+    An object's current state determines which state changes are legal
+
+Requirements:
+    1. OrderStatus Enum containing Pending, Processing, Shipped, Delivered, Cancelled
+            Once an order is shipped, it cannot be Cancelled
+            An order may be cancelled during Pending or Processing
+            Delivered and Cancelled are terminal states
+    2. Create an Order class containing order_id and status
+            Every new orer begins as Pending
+    3. An order must support the following actions: 
+            start_processing
+            ship
+            deliver
+            cancel
+        Each action must validate current state before changing it
+        Pending + Ship = Reject
+        Delivered + Cancel = Reject
+        Cancelled + Start Processing = Reject
+        ...
+        ...
+        ...
+    4. Interface must demo one order completing successfully, 
+        an order successfully cancelled,
+        an invalid transition being rejected
+
+Constraints:
+    No persistence, JSON, CLI arguments, timestamps/due dates, customers, products,
+    payment processing, inventory, logging, abstract base classes, or generalized
+    reusable state-machine framework
+
+:::::::::::::::::::::::::::::MAIN QUESTION::::::::::::::::::::::::::::::::
+Where does your program establish the rules governing which states may transition to
+which other states?
