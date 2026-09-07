@@ -1,0 +1,72 @@
+import Enum, dataclasses
+
+::::::::::::::::::::Support:::::::::::::::::::::
+//class OrderStatus(Enum):
+    //PENDING = 'pending'
+    //PROCESSING = processing
+    //SHIPPED = Shipped
+    //DELIVERED = Delivered
+    //CANCELLED = Cancelled
+
+    //@classmethod
+    //def _missing_(cls, value):
+        //value = value.lower()
+        //for member in cls:
+            //if member.value == value:
+                //return member
+        //else:
+            //return None
+
+//@dataclass
+//class Order:
+    //order_id
+    //_status = OrderStatus default = pending
+
+    //def startProcessing(self):
+        //if status = OrderStatus.pending
+            //status = OrderStatus.processing
+        //else:
+            //raise error
+
+    //def ship(self)
+        //if status = processing
+            //status = OrderStatus.Shipped
+        //else
+            //raise error
+    
+    //def deliver(self)
+        //if status = Shipped
+            //status = OrderStatus.Delivered   
+        //else
+            raise error
+
+    //def cancelOrder(self)
+        //if status = pending or status = processing
+            //status = OrderStatus.cancelled
+        //else
+            //raise error
+
+:::::::::::::::::::Interface:::::::::::::::::::::
+//import support
+
+//Order1 = Order(1)
+//print(Order1)
+//Order1.startProcessing()
+//print(Order1)
+//Order1.ship()
+//print order 1
+//Order1.deliver()
+//print order 1
+
+//Order2 = Order(2)
+//print order 2
+//Order2.cancelOrder()
+//print order 2
+
+//Order3 = Order(3)
+//print order 3
+//Order3.startProcessing()
+//print order 3
+//Order3.ship()
+//print order 3
+//Order3.cancelOrder()
