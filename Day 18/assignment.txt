@@ -1,0 +1,43 @@
+Day 18 - Inheritance Exercise
+Build a small employee hierarchy where inheritance genuinuely makes sense
+Implement an IS-A relationship (contrast to Day 17's HAS-A relationship)
+
+Primary Concept:
+    Inheritance, Method Overriding, super()
+
+The assignment:
+    Build a tiny employee-management model containing 3 classes:
+        Employee - 
+            Name
+            Emp ID
+            Salary
+
+            describe the employee
+            give an annual bonus to the employee
+
+        Developer - 
+            programming language
+
+            override describe so that the employee's programming language is included
+            Developers get a larger yearly bonus
+
+        Manager - 
+            department
+
+            custom describe
+            larger bonus than Developer
+
+interface needs to create 1 employee, 1 manager, and 1 Developer
+    Describe each one
+    Give each one their bonus
+
+Restraints:
+    1. At least one overridden method must use super().__init__()
+    2. This is not a production ready database, the goal is to learn inheritance   
+        OUT OF SCOPE: collections, searching, hiring/firing, other management 
+        functionalities, JSON/persistence, CLI Menus, dataclasses, properties, Enum,
+        abstract base classes, multiple inheritance, 
+
+Central Question:
+    When should I inherit behavior vs when should I use composition?
+    When does it makes sense to implement a HAS-A relationship vs an IS-A relationship?
