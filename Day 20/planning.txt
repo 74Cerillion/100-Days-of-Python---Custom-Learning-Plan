@@ -1,0 +1,32 @@
+Day 20 - Mini Capstone
+    Library System with Books, users, loans, returns, due dates, and persistence
+
+Program Requirements:
+Books have a title, author, and book ID. 
+Members have a name and member ID. 
+Loans have a book, member, checkout date (use datetime), and due date (use datetime).
+Libraries have collections of books, members, and active loans
+A loan is held by a member
+A book can exist on one of two states:
+    loaned
+    available
+
+The completed system must be able to:
+    Add a Book
+    Register a Member
+    Check out a book:
+        The book must exist
+        The member must exist
+        The book must be available
+        The action of checking out the book must create a loan
+        The due date for the book should be automatically calculated
+    Return a Book:
+        Find its active loan
+        Remove or close that loan
+        Make that book available again
+    Show currently checked out books
+        Enough information to identify the book, borrower, and due date
+    persistence
+        Save the libraries state to a JSON file
+        Be able to reconstruct the library from that file
+    
