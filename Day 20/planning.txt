@@ -4,6 +4,7 @@ Enum/StrEnum
 datetime
 sys
 JSON
+pathlib/Path
 
 Objects and their attributes:
 
@@ -126,7 +127,43 @@ main program needs to have:
 
 //def main()
 
-#IMPORT FROM JSON -> PYTHON
+//build path: <var> = Path(__file__).resolve().parent
+//construct absolute path: <var2> = <var1> / 'this dir.json'
+
+//try
+    //with open(<var2>, 'r') as f:
+        //currentState = json.load(f)
+        //#NEED STRATEGY: From here, I'll need to unpack currentState into the Library class attrs.
+            Members, Books, and Loans
+
+        //FOR each book record in currentState["books"]:
+            //CREATE Book object from record
+            //ADD Book object to Library.books
+
+        //FOR each member record in currentState["members"]:
+            //CREATE Member object from record
+            //ADD Member object to Library.members
+
+        //FOR each loan record in currentState["loans"]:
+            //FIND Book object whose bookID matches saved loan bookID
+            //FIND Member object whose memberID matches saved loan memberID
+
+            //CONVERT saved checkout date back into datetime
+            //CONVERT saved due date back into datetime
+
+            //CREATE Loan using:
+                //found Book object
+                //found Member object
+                //checkout datetime
+                //due datetime
+
+            //ADD Loan object to Library.activeLoans
+
+        //SET Library.bookID from currentState["bookID"]
+        //SET Library.memberID from currentState["memberID"]
+
+//except file not found error
+    //print()
 
 //while true
     //print welcome message
@@ -155,6 +192,14 @@ main program needs to have:
 
     //if choice == 'qui' or choice == 'q'
         //#CONVERT PYTHON -> JSON
+        //with open (<var2>, 'rw') as f:
+            //json.dump(Library.activeLoans, f)
+            //json.dump(Library.books, f)
+            //json.dump(Library.members, f)
+            //json.dump(Library.bookID, f)
+            //json.dump(Library.memberID, f)
         //sys.exit(1)
+
+    
 
 //if name main then main()
