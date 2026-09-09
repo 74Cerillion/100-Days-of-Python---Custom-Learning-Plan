@@ -59,23 +59,27 @@ Capabilities Owned:
     //memberID = 001
     //bookID = 001
 
-    //def show current status of books (books=Library.books)
+    @classmethod
+    //def show current status of books (cls, books=Library.books)
         //for book in books:
             //print book: book.status.value
 
+    @classmethod
     //def registerMember(name)
-        //NewMember = Member(name, Library.memberID)
+        //NewMember = Member(cls, name, Library.memberID)
         //members.append(NewMember)
         //memberID += 1
 
-    //def addBook(title, author)
+    @classmethod
+    //def addBook(cls, title, author)
         //newBook = Book(title, author, Library.bookID)
         //books.append(newBook)
         //bookID += 1
 
-    //def checkoutBook(bookID, memberID)
-        //bID = findBookID()
-        //mID = findMemberID()
+    @classmethod
+    //def checkoutBook(cls, bookID, memberID)
+        //bID = findBookID(bookID, memberID)
+        //mID = findMemberID(bookID, memberID)
         //if book status available and member active (by appendix):
             //book status loaned
             //newLoan = Loan(DateTime, DateTime+2wks, bookID, memberID)
@@ -83,9 +87,10 @@ Capabilities Owned:
         //else
             //return book unavailable statement
 
-    //def returnBook(bookID, memberID)
-        //bID = findBookID()
-        //mID = findMemberID()
+    @classmethod
+    //def returnBook(cls, bookID, memberID)
+        //bID = findBookID(bookID, memberID)
+        //mID = findMemberID(bookID, memberID)
         //if book status == loaned
             //search active loans for its ID and store its appendix in "loan appendix"
             //delete from activeLoans loanappendix
@@ -94,11 +99,13 @@ Capabilities Owned:
         //else
             //return cannot return book not loaned statement
 
-    //def findBookID()
+    @classmethod
+    //def findBookID(cls, bookName, memberName)
         //find bookID in books by name
         //return bookID
 
-    //def findMemberID()
+    @classmethod
+    //def findMemberID(cls, bookName, memberName)
         //find memberID in members by name
         //return memberID
 
