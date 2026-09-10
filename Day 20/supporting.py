@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from enum import StrEnum
 from datetime import datetime, timedelta
 
-#statuses of books
 class Status(StrEnum):
     LOANED = "loaned"
     AVAILABLE = "available"
@@ -21,10 +20,10 @@ class Member:
 
 @dataclass
 class Loan:
-    checkoutDate = datetime.now()
-    dueDate: datetime = checkoutDate + timedelta(weeks=3)
     book: int
     member: int
+    checkoutDate = datetime.now()
+    dueDate: datetime = checkoutDate + timedelta(weeks=3)
 
 class Library:
     activeLoans = dict()
@@ -54,11 +53,29 @@ class Library:
 
     @classmethod
     def checkoutBook(cls, bookN, memberN):
-        pass
+        bID = Library._findBookID(bookN)
+        mID = Library._findmemberID(memberN)
+        if Library.books[bID].status.name == "AVAILABLE" and Library.members[mID]:
+            Library.books[bID].status = 'loaned'
+            newLoan = Loan(bID, mID)
+            Library.activeLoans[bID] = newLoan
+        elif Library.books[bID].status.name == 'LOANED':
+            raise "Book not currently available"
+        else:
+            raise "Member not registered at this library"
 
     @classmethod
     def returnBook(cls, bookN, memberN):
-        pass
+        bID = Library._findBookID(bookN)
+        mID = Library._findmemberID(bookN)
+        for i in Library.activeLoans:
+            for k, v in i:
+                if k == bID:
+                    del Library.activeLoans[bID]
+                    print("Book successfully returned.")
+                    Library.books[bID].status = 'available'
+            else:
+                print("Unable to return book")
 
     @classmethod
     def _findBookID(cls, bookN):
