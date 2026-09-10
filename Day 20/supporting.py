@@ -30,8 +30,8 @@ class Library:
     books = dict()
     members = dict()
 
-    memberID = 001
-    bookID = 001
+    memberID = 1
+    bookID = 1
 
     @classmethod
     def showBooks(cls):
@@ -65,9 +65,8 @@ class Library:
             raise "Member not registered at this library"
 
     @classmethod
-    def returnBook(cls, bookN, memberN):
+    def returnBook(cls, bookN):
         bID = Library._findBookID(bookN)
-        mID = Library._findmemberID(bookN)
         for i in Library.activeLoans:
             for k, v in i:
                 if k == bID:
