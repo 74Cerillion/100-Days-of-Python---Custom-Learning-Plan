@@ -81,12 +81,11 @@ def main():
             Library.returnBook(book)
 
         else:
+
+            #insert save state processing here
+
             with open(save, 'w') as f:
-                json.dump(Library.activeLoans, f)
-                json.dump(Library.books, f)
-                json.dump(Library.members, f)
-                json.dump(Library.bookID, f)
-                json.dump(Library.memberID, f)
+                pass
             sys.exit(1)
 
 if __name__ == '__main__':

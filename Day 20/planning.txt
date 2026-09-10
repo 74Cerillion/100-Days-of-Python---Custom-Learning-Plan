@@ -193,13 +193,46 @@ main program needs to have:
     //if choice == 'qui' or choice == 'q'
         //#CONVERT PYTHON -> JSON
         //with open (<var2>, 'rw') as f:
-            //json.dump(Library.activeLoans, f)
-            //json.dump(Library.books, f)
-            //json.dump(Library.members, f)
-            //json.dump(Library.bookID, f)
-            //json.dump(Library.memberID, f)
+            //json.dump(stateToSave, f, indent=4)
         //sys.exit(1)
 
-    
+CREATE empty dictionary state_to_save
+
+CREATE empty dictionary books_to_save
+
+FOR each bookID, book in Library.books:
+    CREATE dictionary containing:
+        title
+        author
+        bookID
+        status as string
+
+    STORE that dictionary in books_to_save using bookID as key
+
+ADD books_to_save to state_to_save["books"]
+
+CREATE empty dictionary members_to_save
+
+FOR each memberID, member in Library.members:
+    CREATE dictionary containing:
+        name
+        memberID
+
+    STORE it using memberID as key
+
+ADD members_to_save to state_to_save["members"]
+
+CREATE empty dictionary loans_to_save
+
+FOR each bookID, loan in Library.activeLoans:
+    CREATE dictionary containing:
+        loan.book
+        loan.member
+        checkoutDate converted to string
+        dueDate converted to string
+
+    STORE it using bookID as key
+
+ADD loans_to_save to state_to_save["activeLoans"]
 
 //if name main then main()
