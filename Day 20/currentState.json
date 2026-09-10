@@ -1,0 +1,61 @@
+{
+    "books": {
+        "1": {
+            "title": "Dune",
+            "author": "Frank Herbert",
+            "bookID": 1,
+            "status": "loaned"
+        },
+        "2": {
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "bookID": 2,
+            "status": "available"
+        },
+        "3": {
+            "title": "1984",
+            "author": "George Orwell",
+            "bookID": 3,
+            "status": "loaned"
+        },
+        "4": {
+            "title": "The Martian",
+            "author": "Andy Weir",
+            "bookID": 4,
+            "status": "available"
+        }
+    },
+
+    "members": {
+        "1": {
+            "name": "Alice",
+            "memberID": 1
+        },
+        "2": {
+            "name": "Bob",
+            "memberID": 2
+        },
+        "3": {
+            "name": "Charlie",
+            "memberID": 3
+        }
+    },
+
+    "activeLoans": {
+        "1": {
+            "book": 1,
+            "member": 2,
+            "checkoutDate": "2026-09-01T14:30:00",
+            "dueDate": "2026-09-22T14:30:00"
+        },
+        "3": {
+            "book": 3,
+            "member": 1,
+            "checkoutDate": "2026-09-05T09:15:00",
+            "dueDate": "2026-09-26T09:15:00"
+        }
+    },
+
+    "bookID": 5,
+    "memberID": 4
+}

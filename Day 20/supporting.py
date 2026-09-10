@@ -22,7 +22,7 @@ class Member:
 class Loan:
     book: int
     member: int
-    checkoutDate = datetime.now()
+    checkoutDate: datetime = datetime.now()
     dueDate: datetime = checkoutDate + timedelta(weeks=3)
 
 class Library:
