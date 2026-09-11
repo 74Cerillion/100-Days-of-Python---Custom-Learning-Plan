@@ -2,7 +2,7 @@ import sys
 import json
 from datetime import datetime
 from pathlib import Path
-from supporting import Library, Book, Member, Loan
+from supporting import Library, Book, Member, Loan, Status
 
 def main():
 
@@ -18,7 +18,7 @@ def main():
                     foundTitle = currentState["books"][k]['title']
                     foundAuthor = currentState["books"][k]['author']
                     foundBookID = int(currentState["books"][k]['bookID'])
-                    foundStatus = currentState["books"][k]['status']
+                    foundStatus = Status(currentState["books"][k]['status'])
                     foundBook = Book(foundTitle, foundAuthor, foundBookID, 
                                                                 foundStatus)
                     Library.books[int(foundBook.bookID)] = foundBook
@@ -73,8 +73,7 @@ def main():
         elif userChoice == 'che':
             member = input("Member checking out book: ")
             book = input("Title of the book: (case sensitive) ")
-            if member in Library.members.values() and book in Library.books.values():
-                Library.checkoutBook(book, member)
+            Library.checkoutBook(book, member)
 
         elif userChoice == 'ret':
             book = input("Enter the Book's Title: ")
@@ -82,10 +81,41 @@ def main():
 
         else:
 
-            #insert save state processing here
+            saveState = dict()
+
+            bookToSave = dict()
+            for bookID, b in Library.books.items():
+                bDict = {"title": b.title,
+                         "author": b.author,
+                         "bookID": bookID,
+                         "status": str(b.status)
+                         }
+                bookToSave[bookID] = bDict
+            saveState["books"] = bookToSave
+
+            memToSave = dict()
+            for memid, mem in Library.members.items():
+                memDict = {"name": mem.name,
+                           "memberID": memid}
+                memToSave[memid] = memDict
+            saveState["members"] = memToSave
+
+            loansToSave = dict()
+            for bookid, loa in Library.activeLoans.items():
+                bloa = {"book": loa.book,
+                        "member": loa.member,
+                        "checkoutDate": str(loa.checkoutDate),
+                        "dueDate": str(loa.dueDate),
+                        }
+                loansToSave[bookid] = bloa
+            saveState["activeLoans"] = loansToSave
+
+            saveState["bookID"] = Library.bookID
+            saveState["memberID"] = Library.memberID
 
             with open(save, 'w') as f:
-                pass
+                json.dump(saveState, f, indent=4)
+
             sys.exit(1)
 
 if __name__ == '__main__':

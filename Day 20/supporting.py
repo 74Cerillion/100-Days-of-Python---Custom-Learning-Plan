@@ -43,7 +43,7 @@ class Library:
     def registerMember(cls, name):
         newMember = Member(name, Library.memberID)
         Library.members[Library.memberID] = newMember
-        memberID += 1
+        Library.memberID += 1
 
     @classmethod
     def addBook(cls, title, author):
@@ -67,25 +67,25 @@ class Library:
     @classmethod
     def returnBook(cls, bookN):
         bID = Library._findBookID(bookN)
-        for i in Library.activeLoans:
-            for k, v in i:
-                if k == bID:
-                    del Library.activeLoans[bID]
-                    print("Book successfully returned.")
-                    Library.books[bID].status = 'available'
-            else:
-                print("Unable to return book")
+        loanToDelete = 0
+        for i in Library.activeLoans.items():
+            if i[0] == bID:
+                loanToDelete = bID
+        if loanToDelete != 0:
+            print("Book successfully returned.")
+            Library.books[bID].status = 'available'
+        else:
+            print("Unable to return book")
+
 
     @classmethod
     def _findBookID(cls, bookN):
-        for i in Library.books:
-            for k, book in i:
-                if book.name == bookN:
-                    return k
+        for i in Library.books.items():
+            if i[1].title == bookN:
+                return i[0]
 
     @classmethod
     def _findmemberID(cls, memberN):
-        for i in Library.members:
-            for k, member in i:
-                if member.name == memberN:
-                    return k
+        for i in Library.members.items():
+            if i[1].name == memberN:
+                return i[0]
