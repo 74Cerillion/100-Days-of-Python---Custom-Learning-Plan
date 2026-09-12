@@ -1,0 +1,41 @@
+Day 22 - Generator Pipeline
+    Lazily process a large text file one record at a time
+
+Focus:
+    generators, yield, lazy evaluation
+
+SCENARIO::::::::::::::::::::::::::::::::::::::::::::::::::::
+You have a potentially huge log file. Loading the entire thing
+into memory just to filter a handful of relevant records would
+be wasteful.
+Build a pipeline that processes the file one line at a time
+
+REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::::::::
+1. read_logs() - accept a filepath and lazily produce
+individual lines from the file
+2. filter_logs() - accept an iterable of log lines and a
+severity such as "ERROR" and lazily procude only matching
+records
+3. parse_logs() - Accept the filtered records and transform
+each one into a structured python object. Ex.
+{
+    "timestamp": "2026-09-12 08:15:41",
+    "severity": "ERROR",
+    "hostname": "db-01",
+    "message": "Connection refused"
+}
+
+CONSTRAINTS::::::::::::::::::::::::::::::::::::::::::::::::::
+No classes, persistance beyond reading the source log, argparse,
+regex, exception-handling, statistics/reporting system, or
+list comprehensions that replace the generators
+
+ALLOWED::::::::::::::::::::::::::::::::::::::::::::::::::::::
+pathlib, split, generators, yield, functions, dictionaries, etc
+
+BY END OF DAY 22: MUST BE ABLE TO ANSWER:
+    1. Why does yield behave differently from return?
+    2. What actually happens when you call a generator function?
+    3. Why could this process a 50GB log file without needing 50GB of RAM?
+    4. What exists in memory immediately after I call read_logs(path),
+            but before I start iterating over it?
