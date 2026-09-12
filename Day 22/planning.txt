@@ -1,0 +1,6 @@
+//import pathlib Path #create absolute filepath
+
+//buildpath = Path(__file__).resolve().parent
+//actualPath = buildpath / 'logFile.txt'
+
+//stat = input status to search for
