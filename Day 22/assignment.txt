@@ -11,13 +11,6 @@ be wasteful.
 Build a pipeline that processes the file one line at a time
 
 REQUIREMENTS::::::::::::::::::::::::::::::::::::::::::::::::
-1. read_logs() - accept a filepath and lazily produce
-individual lines from the file
-2. filter_logs() - accept an iterable of log lines and a
-severity such as "ERROR" and lazily procude only matching
-records
-3. parse_logs() - Accept the filtered records and transform
-each one into a structured python object. Ex.
 {
     "timestamp": "2026-09-12 08:15:41",
     "severity": "ERROR",
