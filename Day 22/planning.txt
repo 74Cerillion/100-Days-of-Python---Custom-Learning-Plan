@@ -26,6 +26,10 @@
 #line processing logic
 //def formatLine(line):
     //(add logic to format the line to desired dictionary)
+    //use split() on the '|' pipe to divide the strings,
+    //use strip to get rid of whitespace.
+    //save these in variables "timestamp", "severity", "hostname", "message"
+    //add to dictionary with variable name as dict key
 
 
 
