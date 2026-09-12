@@ -1,0 +1,34 @@
+Day 21 starts a new block: Pythonic Data Processing
+Day 21 is a List-Comprehension Refactor
+
+Primary Objective:
+    Learn to recognize when a normal transformation or filtering loop can be expressed more cleanly as a Comprehension
+
+THE ASSIGNMENT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+Build a small System Inventory Processor
+
+You've received a list containing information about several systems:
+systems = [
+    {"hostname": "web-01", "os": "Ubuntu", "status": "online", "cpu": 34},
+    {"hostname": "db-01", "os": "RHEL", "status": "online", "cpu": 81},
+    {"hostname": "dev-01", "os": "Ubuntu", "status": "offline", "cpu": 0},
+    {"hostname": "win-01", "os": "Windows", "status": "online", "cpu": 67},
+    {"hostname": "web-02", "os": "Ubuntu", "status": "online", "cpu": 92},
+    {"hostname": "db-02", "os": "RHEL", "status": "offline", "cpu": 0},
+]
+
+Your program needs to derive four new lists from that dataset:
+    1. Hostnames of all systems
+    2. Hostnames of systems that are online
+    3. Hostnames of systems whose CPU utilization is greater than or equal to 80%
+    4. Uppercase hostnames of online Linux systems(Ubuntu or RHEL)
+
+This is explicitly a refactoring exercise. The tasks:
+    1. Implement it using an ordinary for loop and .append()
+    2. print the working version of the above as proof
+    3. refactor each one into a list Comprehension
+    4. print working version as proof
+
+Constraints:
+    No classes, JSON, persistence, argparse, file I/O, dataclasses, Enums, or elaborate validation
+    No nested comprehensions
