@@ -1,0 +1,35 @@
+Day 24 - Lambda/Key Functions Lab - Sort and group complex structures cleanly
+
+Project: Security Event Analyzer
+Focus: lambda, key=, sorted(), min(), max()
+
+SCENARIO:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+You have a collection of security events represented as dictionaries (in main.py)
+Your job is to analyze an reorder these records without manually writing sort algorithms
+
+REQUIREMENTS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+PART 1-------------------
+1. Sort by hostname alphabetically
+    sorted() and key=
+
+2. sort by severity, highest first
+    complete dictionaries should remain in task, only change their order
+
+3. Find the host with the largest number of events
+    use max()
+    I want the event dictionary, not the integer 41
+
+4. Multi-key sort
+    Sort primarily by severity, highest first, but when two hosts have the same severity
+        sort these hosts by event count, highest first
+
+PART 2--------------------
+    For one of requriements 1-3, initially write an ordinary named function
+    Pass that function as your key=
+    once you've confirmed operation, replace it with lambda
+
+CONSTRAINTS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+No classes, no files, no JSON, no generators, no custom iterators, no argparse
+DO NOT MANUALLY IMPLEMENT A SORTING ALGORITHM
+We're learning how Python lets you tell an existing algorithm what value should
+    determine ordering
