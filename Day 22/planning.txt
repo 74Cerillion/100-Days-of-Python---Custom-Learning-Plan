@@ -6,9 +6,6 @@
 #user choice for what type of log to look for
 //stat = input status to search for
 
-#storage area for desired result
-//formattedLogs = dict()
-
 #function that reads one line into memory at a time
 //def read file()
     //with open actualPath in read mode as f
@@ -21,7 +18,8 @@
 //for line in parse file:
     //next(line)
     //if stat in line:
-        //formatLine(line)
+        //formatted = formatLine(line)
+        //print formatted
 
 #line processing logic
 //def formatLine(line):
@@ -39,11 +37,11 @@ open file in read mode -> read file into memory one line at a time ->
 implement generator to pause the function unless invoked -> create generator
 object in parseFile -> call each line, line by line, from generator -> 
 if line meets user criteria from step 2 -> pass line to formatLine() ->
-format line, append to formattedLogs dictionary -> print dictionary
+format line -> print formatted line
 
 functions:
     readFile()
     formatLine()
 
 objects:    
-    parseFile()
+    parseLine
