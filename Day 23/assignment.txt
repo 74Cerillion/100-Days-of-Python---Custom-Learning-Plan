@@ -1,0 +1,35 @@
+Day 23 - Custom Iterator: Create an iterable range-like or paginated object
+
+DAY 23::::::::::::::::::::::::::::::::::::;
+CUSTOM Iterator
+    FOCUS: Iterator Protocol - iter(), next(), __iter__(), __next__(), StopIteration
+
+Yesterday you built generators, today you're building the machinery that generators
+handle for you
+
+THE ASSIGNMENT:::::::::::::::::::::::::::::::
+create a paginatedResults class that accepts the nested page structure during instantiation
+    must implement Python's iterator protocol using __iter__() and __next__()
+
+You'll need to retain enough internal state to know where iteration currently is
+
+iteration should work
+so should manually calling next()
+
+if next() is exhausted, you should be able to catch the StopIteration error
+
+Include at least one empty page in your test dataset
+
+CONSTAINTS:::::::::::::::::::::::::::::::::::::
+no generators and no yield
+No flattening the nested structure beforehand
+no API calls, no json, argparse, persistence, inheritence, properties, or other additions
+ISOLATE the iterator protocol
+
+SUCCESS CRITERIA::::::::::::::::::::::::::::::::::
+    1. Working program
+    2. Why does a for loop stop when __next__() raises StopIteration instead of crashing
+        the program?
+    3. What job does __iter__() perform versus __next__()?
+    4. Based on Days 22 and 23, what do you think a generator is saving you from having to
+        implement manually?
