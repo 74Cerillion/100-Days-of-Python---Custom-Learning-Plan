@@ -1,0 +1,15 @@
+//class PaginatedResults:
+    //def __init__(self, pages):
+        //self.pages = pages
+        //self.currentIndex = 0
+
+    //def __iter__(self):
+        //return self
+
+    //def __next__(self):
+        //try:
+            //current = self.pages[self.currentIndex]
+            //self.currentIndex += 1
+            //return current
+        //except StopIteration:
+            //raise StopIteration
