@@ -1,0 +1,30 @@
+//#1.
+
+//req1 = sorted(events, key='host')
+//print req1
+
+//#2.
+
+//req2 = sorted(events, key='severity', reverse=True)
+//print req2
+
+//#3.
+
+//req3 = sorted(events, key='events', reverse=True)
+//req3 = req3[0]
+//print(req3)
+
+//#4.
+
+//req4 = dict(sorted(
+    events.items(), key=lambda x: (-x['severity'], -x['events'])
+))
+
+//#Part 2
+
+//def getSeverity(event):
+    //return event["severity"]
+
+//print(sorted(events, key=getSeverity))
+
+//print(sorted(events, key=lambda event: event["severity"]))
