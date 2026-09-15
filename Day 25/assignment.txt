@@ -1,0 +1,19 @@
+Day 25 - Zip, Enumerate, any, all Challenge
+COntinuing Pythonic Python block.
+
+ASSIGNMENT:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Server Health Analyzer. You're given information about several servers 
+from 3 separate lists (in main.py). Produce a small report analyzing them.
+
+REQUIREMENTS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+1. Pair the data together using Zip
+    Associate each server with its CPU and service status
+    Do not manually access matching indexes
+2. Number the report using enumerate
+3. Use any() to determine whether at least one server has a CPU usage
+            above 85%
+4. Use all() to determine wehther every server's service is running
+5. Print a final summary containing those two results
+
+CONSTRAINTS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Do not use len() or indices. You may use ordinary for loops.
